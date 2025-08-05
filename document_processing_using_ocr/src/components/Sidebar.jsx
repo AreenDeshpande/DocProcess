@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaUpload, FaUserCircle } from "react-icons/fa";
+import { FaUpload, FaUserCircle, FaChartBar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
@@ -39,6 +39,24 @@ export default function Sidebar() {
       >
         <div className="h-full px-4 py-6 overflow-y-auto">
           <ul className="space-y-4">
+            <li>
+              <Link
+                to="/dashboard"
+                onClick={() => handleSelectItem("dashboard")}
+                className={`flex items-center px-4 py-3 rounded-lg transition duration-200 ${
+                  selectedItem === "dashboard"
+                    ? "bg-[#3b82f6] text-white"
+                    : "text-gray-700 hover:bg-gray-50"
+                }`}
+              >
+                <FaChartBar
+                  className={`w-5 h-5 ${
+                    selectedItem === "dashboard" ? "text-white" : "text-gray-500"
+                  }`}
+                />
+                <span className="ml-3 font-medium">Dashboard</span>
+              </Link>
+            </li>
             <li>
               <Link
                 to="/upload"

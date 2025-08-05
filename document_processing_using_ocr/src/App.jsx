@@ -10,6 +10,7 @@ import LandingPage from "./pages/LandingPage";
 import FileUploadPage from "./pages/FileUploadPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
+import DashboardPage from "./pages/DashboardPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { authService } from "./services/api";
 import { AuthProvider } from "./context/AuthContext";
@@ -44,7 +45,7 @@ function App() {
             path="/login"
             element={
               isAuthenticated ? (
-                <Navigate to="/upload" replace />
+                <Navigate to="/dashboard" replace />
               ) : (
                 <LoginPage />
               )
@@ -54,7 +55,7 @@ function App() {
             path="/signup"
             element={
               isAuthenticated ? (
-                <Navigate to="/upload" replace />
+                <Navigate to="/dashboard" replace />
               ) : (
                 <SignupPage />
               )
@@ -74,7 +75,7 @@ function App() {
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <div>Dashboard (Protected Route)</div>
+                <DashboardPage />
               </ProtectedRoute>
             }
           />

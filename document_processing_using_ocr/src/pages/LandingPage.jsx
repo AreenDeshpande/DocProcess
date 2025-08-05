@@ -322,7 +322,7 @@ const LandingPage = () => {
               </UserIcon>
               {showDropdown && (
                 <DropdownMenu>
-                  {/* <MenuItem
+                  <MenuItem
                     onClick={() => {
                       navigate("/dashboard");
                       setShowDropdown(false);
@@ -337,7 +337,7 @@ const LandingPage = () => {
                     }}
                   >
                     Upload Document
-                  </MenuItem> */}
+                  </MenuItem>
                   <MenuItem onClick={handleLogout}>Logout</MenuItem>
                 </DropdownMenu>
               )}
